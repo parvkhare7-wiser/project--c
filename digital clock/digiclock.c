@@ -5,24 +5,24 @@ double i;
 printf("enter hour and minute");
 scanf("%d", &h);
 scanf("%d", &m);
+s=0;
 while(1)
 {
-for(h;h<24;h++)
-{
-    for(m;m<60;m++)
-    {
-        for(s=1;s<60;s++)
-        {
-            printf("%d:%d:%d", h,m,s);
-            for(i=1;i<3910000;i++)
-            {
-            }
-        }
+    printf("%02d:%02d:%02d\n",h,m,s);
+    sleep(1);
+    s++;
+    if(s==60){
         s=0;
+        m++;
     }
-    m=0;
+    if(m==60){
+        m=0;
+        h++;
+    }
+        if(h==24){
+        h=0;
 }
-h=0;
 }
 return 0;
-}        
+}
+
